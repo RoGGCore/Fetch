@@ -1,0 +1,14 @@
+# Gereksiz sistem dosyaları
+.DS_Store
+Thumbs.db
+
+# Geçici dosyalar ve loglar
+*.log
+tmp/
+temp/
+
+# Eğer varsa büyük kütüphane klasörleri
+node_modules/
+venv/
+bin/
+obj/

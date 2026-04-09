@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { width: 280px; background: #0a0a0a; color: #f0f0f0; font-family: 'Segoe UI', sans-serif; padding: 16px; }
+    .logo { font-size: 1.4rem; font-weight: 900; color: #c8f03d; letter-spacing: -0.03em; margin-bottom: 4px; }
+    .sub { font-size: 0.65rem; color: #555; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 14px; }
+    .input-wrap { display: flex; background: #111; border: 1px solid #1e1e1e; border-radius: 4px; padding: 0 10px; margin-bottom: 10px; }
+    .input-wrap:focus-within { border-color: #c8f03d; }
+    input { flex: 1; background: transparent; border: none; outline: none; color: #f0f0f0; font-size: 0.75rem; padding: 10px 0; }
+    input::placeholder { color: #444; }
+    .btns { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px; }
+    .btn { padding: 9px; border: 1px solid #1e1e1e; border-radius: 4px; background: #111; color: #aaa; font-size: 0.7rem; cursor: pointer; text-align: center; transition: all 0.15s; }
+    .btn:hover { border-color: #c8f03d; color: #c8f03d; }
+    .btn.full { grid-column: 1/-1; }
+    .status { font-size: 0.68rem; color: #555; min-height: 1.2em; margin-bottom: 10px; }
+    .status.ok  { color: #c8f03d; }
+    .status.err { color: #ff4d4d; }
+    hr { border: none; border-top: 1px solid #1e1e1e; margin: 10px 0; }
+    .setting-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .setting-row label { font-size: 0.65rem; color: #555; flex: 1; }
+    .setting-row input { background: #111; border: 1px solid #1e1e1e; border-radius: 3px; color: #f0f0f0; font-size: 0.7rem; padding: 5px 8px; width: 140px; }
+    .btn-save { width: 100%; padding: 8px; background: #c8f03d; color: #0a0a0a; border: none; border-radius: 4px; font-weight: 700; font-size: 0.75rem; cursor: pointer; }
+    .open-link { display: block; text-align: center; color: #555; font-size: 0.62rem; text-decoration: none; margin-top: 10px; cursor: pointer; }
+    .open-link:hover { color: #c8f03d; }
+  </style>
+</head>
+<body>
+  <div class="logo">FETCH</div>
+  <div class="sub">Medya İndirici</div>
+
+  <div class="input-wrap">
+    <input type="text" id="urlInput" placeholder="URL yapıştır veya sekmeyi kullan"/>
+  </div>
+
+  <div class="btns">
+    <button class="btn" id="btnMp4">🎬 MP4</button>
+    <button class="btn" id="btnMp3">🎵 MP3</button>
+    <button class="btn" id="btnSub">📝 Altyazı</button>
+    <button class="btn" id="btnOpen">🌐 FETCH'i Aç</button>
+    <button class="btn full" id="btnTab">📋 Bu Sekmeyi Kullan</button>
+  </div>
+
+  <div class="status" id="status">Bağlanıyor...</div>
+
+  <hr/>
+
+  <div class="setting-row">
+    <label>Şifre (varsa)</label>
+    <input type="password" id="tokenInput" placeholder="Boş bırak"/>
+  </div>
+  <button class="btn-save" id="btnSave">Kaydet</button>
+  <div class="open-link" id="linkOpen">localhost:5000 → Aç</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
