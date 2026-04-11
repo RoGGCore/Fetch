@@ -12,3 +12,5 @@ node_modules/
 venv/
 bin/
 obj/
+serviceAccountKey.json
+.env
